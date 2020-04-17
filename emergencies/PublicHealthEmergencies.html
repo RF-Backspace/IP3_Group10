@@ -1,95 +1,92 @@
 ﻿<!DOCTYPE html>
 
 <html>
-<head>
-    <title>Welcome to EDRS</title>
-    <meta http-equiv="content-type" content="text/html" ; charset="utf-8" />
-
-    <style>
-
-        body {
-            margin: 0;
-            padding: 0;
-            background: #efefef
-        }
-
-        /*ul, li{
-            margin: 0;
-            padding:0;
-        }*/
-
-        .title {
-            color: rgb(114,91,83);
-            text-align: center;
-        }
-
-        .header { /*宽度，高度，背景色*/
-            height: auto; /*高度8vh*/
-            width: auto;
-            margin-left: 0;
-            border-radius: 8px;
-            background: rgba(114,91,83,0.8);
-            position: relative;
-            top: 0; /*固定在顶端*/
-        }
-
-            .header ul { /*清除UL标签默认样式*/
-                width: auto;
-                list-style-type: none; /*宽度自动*/
-                white-space: nowrap;
-                overflow: hidden;
-                margin-left: 5%;
+    <head>
+        <title>Welcome to BEAS</title>
+        <meta http-equiv="content-type" content="text/html" ; charset="utf-8" />
+    
+        <style>
+    
+            body {
+                margin: 0;
+                padding: 0;
+                background: rgba(236, 239, 241,0.6)
+            }
+    
+            ul, li {
+                margin: 0;
                 padding: 0;
             }
-
-            .header li {
-                float: left; /*li内容横向排列*/
-                margin-right: 2%; /*li内容的间距*/
-                margin-top: 1vh;
-                margin-bottom: 1vh;
-                position: relative;
-                overflow: hidden;
+    
+            .title {
+                color: rgb(114,91,83);
+                text-align: center;
+                font-size: 35px;
             }
-
-                .header li a { /*设置链接内容显示格式*/
-                    display: block; /*把链接显示为块元素；整个链接区域可点击*/
-                    color: white;
-                    text-align: center;
-                    padding: 3px;
-                    overflow: hidden;
-                    text-decoration: none;
+    
+            /* {
+                margin: 0;
+                padding: 0;
+            }*/
+            /*可以去除浏览器默认的样式*/
+            .nav {
+                background-color: rgba(109, 76, 65,0.9);
+                width: auto;
+                margin: 0 auto; /*导航条横向居中*/
+                height: 40px;
+            }
+    
+            .nav ul {
+                list-style: none;
+            }
+    
+                .nav ul li {
+                    float: left;
+                    text-align: center; /*导航条文字垂直居中*/
+                    line-height: 40px;
+                    position: relative; /*相对定位使得二级菜单在对应的一级菜单下显示*/
                 }
-
-                    .header li a:hover { /*鼠标选中区域 背景变为#8d8585*/
-                        border-radius: 8px;
-                        background-color: #bcaaa4;
-                    }
-
-            .header ul li ul { /*二级菜单设置*/
-                margin-left: -0.2px;
-                background: none;
-                position: relative;
-                display: none;
-                left: 0; /*默认状态为隐藏二级菜单内容*/
+    
+            .nav a {
+                text-decoration: none;
+                color: black;
+                display: block; /*配合padding使用，让a块状占满整个li*/
+                padding: 0 10px;
             }
-
-                .header ul li ul ellipse { /*二级菜单li内容显示*/
-                    float: none;
-                    text-align: center;
+    
+                .nav a:hover {
+                    background-color: #9c786c;
+                    color: #fff;
                 }
-
-            .header ul li:hover ul { /*鼠标选中二级菜单内容时*/
-                display: block;
+    
+            .nav ul li ul li {
+                float: none; /*取消二级菜单的浮动，使其恢复竖向显示*/
+                background-color: rgba(93, 64, 55,0.9);
+                margin-top: 1px;
+                white-space: nowrap; /*强制二级菜单长度超过父级时候不换行，如果是英文或者数字则不需要*/
             }
-    </style>
-</head>
+    
+            .nav ul li ul {
+                position: absolute; /*以浏览器为（0,0）位置进行定位,且不会因为二级菜单过长而撑开一级菜单*/
+                left: 0;
+                top: 40px;
+                width: auto;
+                display: none; /*使得初始时候二级菜单隐藏*/
+            }
+    
+            .nav ul li:hover ul {
+                display: block; /*使得鼠标经过一级菜单时候二级菜单显示*/
+                z-index: 9999; /*这是重点！！！设置二级菜单的内容为顶层显示*/
+            }
+        </style>
+    </head>
 
 <body>
     <div class="title">
         <h1 class="title">Britain Emergency Alert System</h1>
     </div>
 
-    <div class="header">
+    <div class="nav">
         <center>
             <ul>
                 <li><a style="color:#efefef" href="../index.html">Home</a></li>
@@ -107,7 +104,7 @@
 
     </div>
 
-    <div class='maps' ;'>
+    <div class='nav' ;'>
         <div id='myMap' style='width: auto; height: 100vh;'></div>
         <script type='text/javascript'>
             function loadMapScenario() {
