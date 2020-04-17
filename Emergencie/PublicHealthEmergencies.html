@@ -4,26 +4,26 @@
     <head>
         <title>Welcome to BEAS</title>
         <meta http-equiv="content-type" content="text/html" ; charset="utf-8" />
-    
+
         <style>
-    
+
             body {
                 margin: 0;
                 padding: 0;
                 background: rgba(236, 239, 241,0.6)
             }
-    
+
             ul, li {
                 margin: 0;
                 padding: 0;
             }
-    
+
             .title {
                 color: rgb(114,91,83);
                 text-align: center;
                 font-size: 35px;
             }
-    
+
             /* {
                 margin: 0;
                 padding: 0;
@@ -35,37 +35,37 @@
                 margin: 0 auto; /*导航条横向居中*/
                 height: 40px;
             }
-    
+
             .nav ul {
                 list-style: none;
             }
-    
+
                 .nav ul li {
                     float: left;
                     text-align: center; /*导航条文字垂直居中*/
                     line-height: 40px;
                     position: relative; /*相对定位使得二级菜单在对应的一级菜单下显示*/
                 }
-    
+
             .nav a {
                 text-decoration: none;
                 color: black;
                 display: block; /*配合padding使用，让a块状占满整个li*/
                 padding: 0 10px;
             }
-    
+
                 .nav a:hover {
                     background-color: #9c786c;
                     color: #fff;
                 }
-    
+
             .nav ul li ul li {
                 float: none; /*取消二级菜单的浮动，使其恢复竖向显示*/
                 background-color: rgba(93, 64, 55,0.9);
                 margin-top: 1px;
                 white-space: nowrap; /*强制二级菜单长度超过父级时候不换行，如果是英文或者数字则不需要*/
             }
-    
+
             .nav ul li ul {
                 position: absolute; /*以浏览器为（0,0）位置进行定位,且不会因为二级菜单过长而撑开一级菜单*/
                 left: 0;
@@ -73,7 +73,7 @@
                 width: auto;
                 display: none; /*使得初始时候二级菜单隐藏*/
             }
-    
+
             .nav ul li:hover ul {
                 display: block; /*使得鼠标经过一级菜单时候二级菜单显示*/
                 z-index: 9999; /*这是重点！！！设置二级菜单的内容为顶层显示*/
@@ -91,20 +91,20 @@
             <ul>
                 <li><a style="color:#efefef" href="../index.html">Home</a></li>
                 <li>
-                    <a style="color:#efefef" href='PublicSafetyEmergencies.html'> Public Safety Emergencies </a>
+                    <a style="color:#efefef" href="PublicHealthEmergencies.html"> Public Health Emergencies </a>
                     <ul>
-                        <li><a style="color:#efefef" href="PublicHealthEmergencies.html"> Public Health Emergencies </a></li> <li></li>
+                        <li><a style="color:#efefef" href='PublicSafetyEmergencies.html'> Public Safety Emergencies </a></li>
                         <li><a style="color:#efefef" href="NaturalDisatersEmergencies.html"> Natural Disasters Emergencies </a></li>
                     </ul>
                 </li>
-                <li><a style="color:#efefef" href="../aboutus.html">About us</a></li>
+                <li><a style="color:#efefef" href="../about.html">About Us</a></li>
                 <li style="float:right"><a style=" color: #efefef " href="#registered&login">Registered & Login</a></li>
             </ul>
         </center>
 
     </div>
 
-    <div class='maps' ;'>
+    <div class='nav' ;'>
         <div id='myMap' style='width: auto; height: 100vh;'></div>
         <script type='text/javascript'>
             function loadMapScenario() {
@@ -112,15 +112,15 @@
                     //center:new Microsoft.Maps.Location(55.860916, -4.251433)
                 });
 
-                var pushpins = Microsoft.Maps.TestDataGenerator.getPushpins(500, map.getBounds());
+                var pushpins = Microsoft.Maps.TestDataGenerator.getPushpins(80, map.getBounds());
                 var infobox = new Microsoft.Maps.Infobox(pushpins[0].getLocation(), { visible: false, autoAlignment: true });
                 infobox.setMap(map);
                 for (var i = 0; i < pushpins.length; i++) {
                     var pushpin = pushpins[i];
                     //Store some metadata with the pushpin
                     pushpin.metadata = {
-                        title: 'NO.' + i + ' Security Issues Title ',
-                        description: 'No.' + i + ' Security issues detail.'
+                        title: 'NO.' + i + ' Public Health Issues Title ',
+                        description: 'No.' + i + ' Public health issues detail.'
                     };
                     Microsoft.Maps.Events.addHandler(pushpin, 'click', function (args) {
                         infobox.setOptions({
