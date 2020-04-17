@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Welcome to EDRS</title>
+    <meta http-equiv="content-type" content="text/html" ; charset="utf-8" />
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #efefef
+        }
+
+        /*ul, li{
+            margin: 0;
+            padding:0;
+        }*/
+
+        .title {
+            color: rgb(114,91,83);
+            text-align: center;
+        }
+
+        .header { /*宽度，高度，背景色*/
+            height: 38px; 
+            width: auto;
+            margin-left: 0;
+            border-radius: 8px;
+            background: rgba(114,91,83,0.8);
+            position: relative;
+            top: 0; /*固定在顶端*/
+        }
+
+            .header ul { /*清除UL标签默认样式*/
+                width: auto;
+                list-style-type: none; /*宽度自动*/
+                white-space: nowrap;
+                overflow: hidden;
+                margin-left: 5%;
+                padding: 0;
+            }
+
+            .header li {
+                float: left; /*li内容横向排列*/
+                margin-right: 2%; /*li内容的间距*/
+                margin-top: 1vh;
+                margin-bottom: 1vh;
+                position: relative;
+                overflow: hidden;
+                text-align: center;
+            }
+
+                .header li a { /*设置链接内容显示格式*/
+                    display: block; /*把链接显示为块元素；整个链接区域可点击*/
+                    color: white;
+                    text-align: center;
+                    padding: 3px;
+                    overflow: hidden;
+                    text-decoration: none;
+                }
+
+                    .header li a:hover { /*鼠标选中区域 背景变为#8d8585*/
+                        border-radius: 8px;
+                        background-color: #bcaaa4;
+                    }
+
+            .header ul li ul { /*二级菜单设置*/
+                float: none;
+                background: rgba(114,91,83,0.9);
+                margin:0 auto;
+                margin-top: 1px;
+                border-bottom-right-radius: 8px;
+                border-bottom-left-radius: 8px;
+                margin-left: 0px;
+                position: relative;
+                display: none;
+                left:10px; /*默认状态为隐藏二级菜单内容*/
+                width:180px;
+            }
+
+                .header ul li ul ellipse { /*二级菜单li内容显示*/
+                    position:center;
+                    float: none;
+                    text-align: center;
+                }
+
+            .header ul li:hover ul { /*鼠标选中二级菜单内容时*/
+                display: block;
+                z-index: 9999;
+
+            }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <h1 class="title">Britain Emergency Alert System</h1>
+    </div>
+
+    <div class="header">
+        <center>
+            <ul>
+                <li><a style="color:#efefef" href="../index.html">Home</a></li>
+                <li>
+                    <a style="color:#efefef" href="NaturalDisatersEmergencies.html"> Natural Disasters Emergencies </a>
+                    <ul>
+                        <li><a style="color:#efefef" href="PublicHealthEmergencies.html"> Public Health Emergencies </a></li>
+                        <li><a style="color:#efefef" href='PublicSafetyEmergencies.html'> Public Safety Emergencies </a></li>
+                    </ul>
+                </li>
+                <li><a style="color:#efefef" href="../aboutus.html">About us</a></li>
+                <li style="float:right"><a style=" color: #efefef " href="#registered&login">Registered & Login</a></li>
+            </ul>
+        </center>
+
+    </div>
+
+    <div class='maps' ;'>
+        <div id='myMap' style='width: auto; height: 100vh;'></div>
+        <script type='text/javascript'>
+            function loadMapScenario() {
+                var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+                    /* No need to set credentials if already passed in URL */
+                    /*center: new Microsoft.Maps.Location(47.60357, -122.32945)*/
+                });
+                var center = map.getCenter();
+                var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(), null);
+                var infobox = new Microsoft.Maps.Infobox(center, { title: 'No Natural Disaters Emergencies Case', description: 'Congratulations, there is no Natural Disaters Emergencies case in this area, travel happily. ^_^', visible: false });
+                infobox.setMap(map);
+                Microsoft.Maps.Events.addHandler(pushpin, 'click', function () {
+                    infobox.setOptions({ visible: true });
+                });
+                map.entities.push(pushpin);
+                Microsoft.Maps.Events.addHandler(pushpin, 'click', function () {
+                    infobox.setOptions({ visible: true });
+                });
+                map.entities.push(pushpin);
+            }
+        </script>
+        <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AplBCnqpbUWVMnO-7WfoEV8Z0KLu0LSkciOZieJWzLbCihaV_Z_IG3siXJNfo3ku&callback=loadMapScenario' async defer></script>
+    </div>
+
+</body>
+
+</html>

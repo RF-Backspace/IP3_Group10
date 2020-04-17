@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Welcome to BEAS</title>
+    <meta http-equiv="content-type" content="text/html" ; charset="utf-8" />
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: rgba(236, 239, 241,0.6)
+        }
+
+        ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .title {
+            color: rgb(114,91,83);
+            text-align: center;
+            font-size: 35px;
+        }
+
+        /* {
+            margin: 0;
+            padding: 0;
+        }*/
+        /*可以去除浏览器默认的样式*/
+        #nav {
+            background-color: rgba(109, 76, 65,0.9);
+            width: auto;
+            margin: 0 auto; /*导航条横向居中*/
+            height: 40px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+            ul li {
+                float: left;
+                text-align: center; /*导航条文字垂直居中*/
+                line-height: 40px;
+                position: relative; /*相对定位使得二级菜单在对应的一级菜单下显示*/
+            }
+
+        a {
+            text-decoration: none;
+            color: black;
+            display: block; /*配合padding使用，让a块状占满整个li*/
+            padding: 0 10px;
+        }
+
+            a:hover {
+                background-color: #9c786c;
+                color: #fff;
+            }
+
+        ul li ul li {
+            float: none; /*取消二级菜单的浮动，使其恢复竖向显示*/
+            background-color: rgba(93, 64, 55,0.9);
+            margin-top: 1px;
+            white-space: nowrap; /*强制二级菜单长度超过父级时候不换行，如果是英文或者数字则不需要*/
+        }
+
+        ul li ul {
+            position: absolute; /*以浏览器为（0,0）位置进行定位,且不会因为二级菜单过长而撑开一级菜单*/
+            left: 0;
+            top: 40px;
+            width: auto;
+            display: none; /*使得初始时候二级菜单隐藏*/
+        }
+
+        ul li:hover ul {
+            display: block; /*使得鼠标经过一级菜单时候二级菜单显示*/
+            z-index: 9999; /*这是重点！！！设置二级菜单的内容为顶层显示*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <h1 class="title">Britain Emergency Alert System</h1>
+    </div>
+
+    <div id="nav">
+        <center>
+            <ul>
+                <li><a style="color:#efefef" href="index.html">Home</a></li>
+                <li>
+                    <a style="color:#efefef" href="#">Emergencies</a>
+                    <ul>
+                        <li><a style="color:#efefef" href="Emergencies/PublicHealthEmergencies.html"> Public Health Emergencies </a></li>
+                        <li><a style="color:#efefef" href='Emergencies/PublicSafetyEmergencies.html'> Public Safety Emergencies </a></li>
+                        <li><a style="color:#efefef" href="Emergencies/NaturalDisatersEmergencies.html"> Natural Disasters Emergencies </a></li>
+                    </ul>
+                </li>
+                <li><a style="color:#efefef" href="#about_us">About us</a></li>
+                <li style="float:right"><a style=" color: #efefef " href="#registered&login">Registered & Login</a></li>
+            </ul>
+        </center>
+
+    </div>
+
+    <div class="body">
+        <div align="center">
+            <h1 style="color:rgb(114,91,83)">About Us</h1>
+        </div>
+
+        <div class="who" align="center">
+            <h2 style="color:rgb(114,91,83)">WHO ARE WE?</h2>
+            <p class="test" , style="color:rgb(114,91,83)">We are a small team placed in the UK.</p>
+        </div>
+
+        <div class="what" align="center">
+            <h2 style="color:rgb(114,91,83)">
+                WHAT WE DEVELOP?
+            </h2>
+            <p class="test" , style="color:rgb(114,91,83)">
+            We are developing a web/mobile emergency alert app for use in the UK. BEAS(Britain Emergency Alert System) provides users with a centralised source of information regarding any potential emergencies in their area,<br>
+            whether they are health, natural or safety related. The information comes from both official sources and through verifying user reports, which can be submitted through the app. The app also contains communication<br>
+            features that allow users to chat with their contacts through the app.</p>
+        </div>
+
+        <div class="Why" align="center">
+            <h2 style="color:rgb(114,91,83)">
+                WHY WE DEVELOP THIS APP?
+            </h2>
+            <p class="test" , style="color:rgb(114,91,83)">
+            As of right now, there is no other app that covers a wide array of emergencies at once while allowing users to file reports of their own. We began developing BEAS as a way of filling this gap and providing a useful resource
+            to the public.</p>
+        </div>
+    </div>
+</body>
+
+</html>
