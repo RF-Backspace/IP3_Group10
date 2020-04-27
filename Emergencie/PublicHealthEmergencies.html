@@ -112,15 +112,15 @@
                     //center:new Microsoft.Maps.Location(55.860916, -4.251433)
                 });
 
-                var pushpins = Microsoft.Maps.TestDataGenerator.getPushpins(80, map.getBounds());
+                var pushpins = Microsoft.Maps.TestDataGenerator.getPushpins(1400, map.getBounds());
                 var infobox = new Microsoft.Maps.Infobox(pushpins[0].getLocation(), { visible: false, autoAlignment: true });
                 infobox.setMap(map);
                 for (var i = 0; i < pushpins.length; i++) {
                     var pushpin = pushpins[i];
                     //Store some metadata with the pushpin
                     pushpin.metadata = {
-                        title: 'NO.' + i + ' Public Health Issues Title ',
-                        description: 'No.' + i + ' Public health issues detail.'
+                        title: 'NO.' + i + ' COVID-19 patients reported ',
+                        description: 'No.' + i + ' Confirmed patient.'
                     };
                     Microsoft.Maps.Events.addHandler(pushpin, 'click', function (args) {
                         infobox.setOptions({
